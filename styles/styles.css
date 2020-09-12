@@ -1,10 +1,30 @@
+body {
+    background-color: #121212;
+    color: white;
+}
+
+
 .header {
-    border: black solid 1px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border: 1px solid #BB86FC;
+    background-color: #222222;
+}
+
+.score {
+    display: flex;
+    justify-content: center;
+    grid-column-start: 1;
+}
+
+.your-score {
+    margin-left: 10px;
 }
 
 .title {
     display: flex;
     justify-content: center;
+    grid-column-start: 2;
 }
 
 .game-board {
@@ -25,8 +45,9 @@
 }
 
 .img-border {
-    border: 1px solid black;
-    border-radius: 50px 25px;
+    background-color: #222222;
+    border: 1px solid #BB86FC;
+    border-radius: 75px 25px;
     margin: 5px;
     height: 150px;
 }
