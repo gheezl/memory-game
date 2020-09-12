@@ -12,21 +12,27 @@ const getRandomImage = (items) => {
     return randomImage
 }
 
-getRandomImage(images)
+const displayImage = () => {
+    console.log("hi")
+    const image = document.getElementsByClassName("img")
+}
 
 const gameBoard = document.getElementById("game-board")
 
 const drawImage = (gameBoard, row, column) => {
-    console.log(row, column)
+
+    const imageBorder = document.createElement("div")
+    imageBorder.classList.add("img-border")
+
     const imageElement = document.createElement("img")
     imageElement.style.gridRowStart = Math.floor(Math.random() * row)
     imageElement.style.gridColumnStart = Math.floor(Math.random() * column)
-    imageElement.style.borderColor = "black"
-    imageElement.style.borderWidth = "1px"
-    imageElement.style.border = "solid"
     imageElement.classList.add("img")
+    imageElement.onclick = displayImage
     imageElement.src = getRandomImage(images)
-    gameBoard.appendChild(imageElement)
+
+    imageBorder.appendChild(imageElement)
+    gameBoard.appendChild(imageBorder)
 }
 
 
