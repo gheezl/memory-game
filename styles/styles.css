@@ -9,13 +9,17 @@
 
 .game-board {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     margin-top: 10px;
     border: black solid 1px
 }
 
-.img1 {
-    width: 75px;
-    height: 75px;
+.img {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin: 25px;
+    width: 100px;
+    height: 100px;
 }
