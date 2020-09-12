@@ -8,6 +8,7 @@ body {
 .header {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    padding: 25px;
     border: 1px solid #BB86FC;
     background-color: #222222;
 }
@@ -16,6 +17,7 @@ body {
     display: flex;
     justify-content: center;
     grid-column-start: 1;
+    font-size: 30px;
 }
 
 .your-score {
@@ -26,6 +28,7 @@ body {
     display: flex;
     justify-content: center;
     grid-column-start: 2;
+    font-size: 30px;
 }
 
 .game-board {

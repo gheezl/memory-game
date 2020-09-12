@@ -22,7 +22,7 @@ const allImages = document.getElementsByClassName("img")
 let clickedImages = []
 let score = 0
 let interval = null
-let time = 0
+let clickCounter = 0
 
 // this hides all the images after 1 second of display
 
@@ -30,7 +30,6 @@ const hideImages = () => {
     for (let item of allImages) {
         item.style.opacity = "0"
     }
-    clearInterval(interval)
 }
 
 // this displays the score on the header
@@ -40,26 +39,21 @@ scoreDocument.innerHTML = score.toString()
 // this is the function that draws the card that holds the image
 
 const drawImage = (gameBoard) => {
-
-    // this creates the border around the image
+    // this creates a random image
 
     const imageBorder = document.createElement("div")
     imageBorder.classList.add("img-border")
-
-    // this creates a random image
-
     const imageElement = document.createElement("img")
     imageElement.style.gridRowStart = Math.floor(Math.random() * 1)
     imageElement.style.gridColumnStart = Math.floor(Math.random() * 1)
     imageElement.classList.add("img")
-    imageElement.id = "img"
     imageElement.style.opacity = "0"
     imageElement.src = getRandomImage(images)
 
     // this is the function that displays the image after it is clicked
 
     const displayImage = () => {
-
+        clickCounter += 1
         imageElement.style.opacity = "1"
         clickedImages.push(imageElement.src)
 
@@ -67,12 +61,15 @@ const drawImage = (gameBoard) => {
             clickedImages = []
             score = score + 1
             scoreDocument.innerHTML = score
-            interval = setInterval(hideImages, 1000)
         }
 
         if (clickedImages.length === 2) {
             clickedImages = []
-            interval = setInterval(hideImages, 1000)
+        }
+
+        if (clickCounter === 2) {
+            clickCounter = 0
+            interval = setTimeout(hideImages, 1000)
         }
 
         return;
