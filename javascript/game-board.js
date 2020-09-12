@@ -12,10 +12,6 @@ const getRandomImage = (items) => {
     return randomImage
 }
 
-const displayImage = () => {
-    console.log("hi")
-    const image = document.getElementsByClassName("img")
-}
 
 const gameBoard = document.getElementById("game-board")
 
@@ -23,15 +19,21 @@ const drawImage = (gameBoard, row, column) => {
 
     const imageBorder = document.createElement("div")
     imageBorder.classList.add("img-border")
+    imageBorder.style.height = "175px"
 
-    const imageElement = document.createElement("img")
-    imageElement.style.gridRowStart = Math.floor(Math.random() * row)
-    imageElement.style.gridColumnStart = Math.floor(Math.random() * column)
-    imageElement.classList.add("img")
-    imageElement.onclick = displayImage
-    imageElement.src = getRandomImage(images)
+    const displayImage = () => {
+        const imageElement = document.createElement("img")
+        imageElement.style.gridRowStart = Math.floor(Math.random() * row)
+        imageElement.style.gridColumnStart = Math.floor(Math.random() * column)
+        imageElement.classList.add("img")
+        imageElement.src = getRandomImage(images)
 
-    imageBorder.appendChild(imageElement)
+        imageBorder.appendChild(imageElement)
+    }
+
+    imageBorder.onclick = displayImage
+
+
     gameBoard.appendChild(imageBorder)
 }
 
