@@ -4,6 +4,7 @@ const images = [
     "http://static.movingpackets.net/2013/12/github-logo-transparent.jpg",
     "https://www.drupal.org/files/project-images/github_commits_logo.png",
     "https://image.freepik.com/free-icon/github-logo-in-a-rounded-square_318-40761.jpg",
+    "http://www.pngall.com/wp-content/uploads/2016/04/Github-PNG-Image.png",
 ]
 
 
@@ -14,24 +15,37 @@ const getRandomImage = (items) => {
 
 
 const gameBoard = document.getElementById("game-board")
+let clickedImages = []
+let score = 0
 
-const drawImage = (gameBoard, row, column) => {
+
+
+const drawImage = (gameBoard) => {
+
 
     const imageBorder = document.createElement("div")
     imageBorder.classList.add("img-border")
-    imageBorder.style.height = "175px"
 
 
     const imageElement = document.createElement("img")
-    imageElement.style.gridRowStart = Math.floor(Math.random() * row)
-    imageElement.style.gridColumnStart = Math.floor(Math.random() * column)
+    imageElement.style.gridRowStart = Math.floor(Math.random() * 1)
+    imageElement.style.gridColumnStart = Math.floor(Math.random() * 1)
     imageElement.classList.add("img")
     imageElement.style.opacity = "0"
     imageElement.src = getRandomImage(images)
 
-
     const displayImage = () => {
+        console.log(score)
         imageElement.style.opacity = "1"
+        clickedImages.push(imageElement.src)
+        console.log(clickedImages)
+
+        if (clickedImages.length === 2) {
+            clickedImages = []
+            if (clickedImages[0] === clickedImages[1]) {
+                score = score + 1
+            }
+        }
     }
 
     imageBorder.onclick = displayImage
@@ -42,7 +56,5 @@ const drawImage = (gameBoard, row, column) => {
 
 
 images.map(() => {
-    let rowStart = 1
-    let columnStart = 1
-    drawImage(gameBoard, rowStart, columnStart)
+    drawImage(gameBoard)
 })
