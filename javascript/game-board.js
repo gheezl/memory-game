@@ -1,11 +1,10 @@
 const images = [
     "https://cdn.afterdawn.fi/v3/news/original/github-logo.png",
-    "https://www.gooddata.com/sites/default/files/images/featured_logo_github_1.png",
+    "http://static.movingpackets.net/2013/12/github-logo-transparent.jpg",
     "http://static.movingpackets.net/2013/12/github-logo-transparent.jpg",
     "https://www.drupal.org/files/project-images/github_commits_logo.png",
     "https://image.freepik.com/free-icon/github-logo-in-a-rounded-square_318-40761.jpg",
     "http://www.pngall.com/wp-content/uploads/2016/04/Github-PNG-Image.png",
-
 ]
 
 // this function randomly selects an image
@@ -19,8 +18,20 @@ const getRandomImage = (items) => {
 
 const gameBoard = document.getElementById("game-board")
 const scoreDocument = document.getElementById("your-score")
+const allImages = document.getElementsByClassName("img")
 let clickedImages = []
 let score = 0
+let interval = null
+let time = 0
+
+// this hides all the images after 1 second of display
+
+const hideImages = () => {
+    for (let item of allImages) {
+        item.style.opacity = "0"
+    }
+    clearInterval(interval)
+}
 
 // this displays the score on the header
 
@@ -41,12 +52,14 @@ const drawImage = (gameBoard) => {
     imageElement.style.gridRowStart = Math.floor(Math.random() * 1)
     imageElement.style.gridColumnStart = Math.floor(Math.random() * 1)
     imageElement.classList.add("img")
+    imageElement.id = "img"
     imageElement.style.opacity = "0"
     imageElement.src = getRandomImage(images)
 
     // this is the function that displays the image after it is clicked
 
     const displayImage = () => {
+
         imageElement.style.opacity = "1"
         clickedImages.push(imageElement.src)
 
@@ -54,11 +67,12 @@ const drawImage = (gameBoard) => {
             clickedImages = []
             score = score + 1
             scoreDocument.innerHTML = score
+            interval = setInterval(hideImages, 1000)
         }
 
         if (clickedImages.length === 2) {
-            console.log(clickedImages)
             clickedImages = []
+            interval = setInterval(hideImages, 1000)
         }
 
         return;
