@@ -21,18 +21,21 @@ const drawImage = (gameBoard, row, column) => {
     imageBorder.classList.add("img-border")
     imageBorder.style.height = "175px"
 
-    const displayImage = () => {
-        const imageElement = document.createElement("img")
-        imageElement.style.gridRowStart = Math.floor(Math.random() * row)
-        imageElement.style.gridColumnStart = Math.floor(Math.random() * column)
-        imageElement.classList.add("img")
-        imageElement.src = getRandomImage(images)
 
-        imageBorder.appendChild(imageElement)
+    const imageElement = document.createElement("img")
+    imageElement.style.gridRowStart = Math.floor(Math.random() * row)
+    imageElement.style.gridColumnStart = Math.floor(Math.random() * column)
+    imageElement.classList.add("img")
+    imageElement.style.opacity = "0"
+    imageElement.src = getRandomImage(images)
+
+
+    const displayImage = () => {
+        imageElement.style.opacity = "1"
     }
 
     imageBorder.onclick = displayImage
-
+    imageBorder.appendChild(imageElement)
 
     gameBoard.appendChild(imageBorder)
 }
