@@ -35,6 +35,8 @@ const getRandomImage = (items) => {
 const gameBoard = document.getElementById("game-board")
 const scoreDocument = document.getElementById("your-score")
 const allImages = document.getElementsByClassName("img")
+let matchingImage1 = null
+let matchingImage2 = null
 let clickedImages = []
 let score = 0
 let id = 0
@@ -56,8 +58,8 @@ const hideImages = () => {
 // this deletes the matching images
 
 const deleteImages = () => {
-    const matchingImage1 = document.getElementById(clickedImages[0][1])
-    const matchingImage2 = document.getElementById(clickedImages[1][1])
+    matchingImage1 = document.getElementById(clickedImages[0][1])
+    matchingImage2 = document.getElementById(clickedImages[1][1])
     matchingImage1.remove()
     matchingImage2.remove()
     score = score + 10
@@ -68,7 +70,7 @@ const deleteImages = () => {
 // this reduces the score if you click on 2 different images
 
 const reduceScore = () => {
-    if (score >= 10) {
+    if (score >= 1) {
         score -= 1
     }
     scoreDocument.innerHTML = score
@@ -117,12 +119,9 @@ const drawImage = (gameBoard) => {
             setTimeout(reduceScore, 1000)
         }
 
-
         if (clickCounter === 2) {
             setTimeout(hideImages, 1000)
         }
-
-        return;
     }
 
     imageBorder.onclick = displayImage

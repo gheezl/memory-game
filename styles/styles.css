@@ -42,13 +42,14 @@ body {
 .img {
     display: flex;
     justify-content: center;
-    padding: 10px;
-    margin: 25px;
     width: 100px;
     height: 100px;
 }
 
 .img-border {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #222222;
     border: 1px solid #BB86FC;
     border-radius: 75px 25px;
