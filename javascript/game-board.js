@@ -56,19 +56,20 @@ const hideImages = () => {
 // this deletes the matching images
 
 const deleteImages = () => {
-    console.log(clickedImages)
     const matchingImage1 = document.getElementById(clickedImages[0][1])
     const matchingImage2 = document.getElementById(clickedImages[1][1])
     matchingImage1.remove()
     matchingImage2.remove()
-    score = score + 1
+    score = score + 10
     clickedImages = []
     scoreDocument.innerHTML = score
 }
 
+// this reduces the score if you click on 2 different images
+
 const reduceScore = () => {
-    if (score >= 1) {
-        score -= 0.1
+    if (score >= 10) {
+        score -= 1
     }
     scoreDocument.innerHTML = score
 }
@@ -107,7 +108,6 @@ const drawImage = (gameBoard) => {
         clickCounter += 1
         imageElement.style.opacity = "1"
         clickedImages.push([imageElement.src, imageBorder.id])
-        console.log(clickCounter)
 
         if (clickedImages[0][0] === clickedImages[1][0]) {
             setTimeout(deleteImages, 1000)
