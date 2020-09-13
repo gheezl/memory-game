@@ -17,6 +17,8 @@ const images = [
     "https://www.drupal.org/files/project-images/github_commits_logo.png",
     "https://image.freepik.com/free-icon/github-logo-in-a-rounded-square_318-40761.jpg",
     "http://www.pngall.com/wp-content/uploads/2016/04/Github-PNG-Image.png",
+    "https://www.drupal.org/files/project-images/github_commits_logo.png",
+    "https://image.freepik.com/free-icon/github-logo-in-a-rounded-square_318-40761.jpg",
 ]
 
 
@@ -54,12 +56,20 @@ const hideImages = () => {
 // this deletes the matching images
 
 const deleteImages = () => {
+    console.log(clickedImages)
     const matchingImage1 = document.getElementById(clickedImages[0][1])
     const matchingImage2 = document.getElementById(clickedImages[1][1])
     matchingImage1.remove()
     matchingImage2.remove()
-    clickedImages = []
     score = score + 1
+    clickedImages = []
+    scoreDocument.innerHTML = score
+}
+
+const reduceScore = () => {
+    if (score >= 1) {
+        score -= 0.1
+    }
     scoreDocument.innerHTML = score
 }
 
@@ -73,7 +83,7 @@ const drawImage = (gameBoard) => {
     columnPosition += 1
     id += 1
 
-    if (columnPosition === 10) {
+    if (columnPosition === 11) {
         rowPosition += 1
         columnPosition = 1
     }
@@ -97,10 +107,16 @@ const drawImage = (gameBoard) => {
         clickCounter += 1
         imageElement.style.opacity = "1"
         clickedImages.push([imageElement.src, imageBorder.id])
+        console.log(clickCounter)
 
         if (clickedImages[0][0] === clickedImages[1][0]) {
             setTimeout(deleteImages, 1000)
         }
+
+        if (clickedImages[0][0] !== clickedImages[1][0]) {
+            setTimeout(reduceScore, 1000)
+        }
+
 
         if (clickCounter === 2) {
             setTimeout(hideImages, 1000)
