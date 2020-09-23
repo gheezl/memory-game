@@ -5,7 +5,8 @@ export const images = [
     "../images/sonic.png",
     "../images/mario.png",
     "../images/mega-man.png",
-    "../images/playstation.png"
+    "../images/playstation.png",
+    "../images/Xbox.png"
     // "http://static.movingpackets.net/2013/12/github-logo-transparent.jpg",
     // "http://static.movingpackets.net/2013/12/github-logo-transparent.jpg",
     // "https://www.drupal.org/files/project-images/github_commits_logo.png",
