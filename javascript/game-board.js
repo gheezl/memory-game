@@ -75,25 +75,30 @@ const drawImage = (gameBoard) => {
     imageBorder.style.gridColumnStart = columnPosition
 
     const imageElement = document.createElement("img")
+    imageElement.id = Math.floor(Math.random() * 10)
     imageElement.classList.add("img")
     imageElement.style.opacity = "0"
     imageElement.src = getRandomImage(images)
+
+    const imageId = []
 
     // this is the function that displays the image after it is clicked
 
     const displayImage = () => {
         clickCounter += 1
-        console.log(clickCounter)
         imageElement.style.opacity = "1"
         clickedImages.push([imageElement.src, imageBorder.id])
+        imageId.push(imageElement.id)
 
         if (clickedImages[0][0] === clickedImages[1][0]) {
-            setTimeout(deleteImages, 1000)
+            if (imageId[0] !== imageId[1]) {
+                setTimeout(deleteImages, 1000)
+            }
+            else {
+                hideImages()
+            }
         }
 
-        // if (clickedImages[0][0] !== clickedImages[1][0]) {
-        //     setTimeout(reduceScore, 1000)
-        // }
 
         if (clickCounter === 3) {
             hideImages()
