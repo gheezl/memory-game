@@ -91,9 +91,9 @@ const drawImage = (gameBoard) => {
             setTimeout(deleteImages, 1000)
         }
 
-        if (clickedImages[0][0] !== clickedImages[1][0]) {
-            reduceScore
-        }
+        // if (clickedImages[0][0] !== clickedImages[1][0]) {
+        //     setTimeout(reduceScore, 1000)
+        // }
 
         if (clickCounter === 3) {
             hideImages()
