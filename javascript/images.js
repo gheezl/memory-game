@@ -9,5 +9,6 @@ export const images = [
     "../images/Xbox.png",
     "../images/nintendo.png",
     "../images/sega.png",
-    "../images/smash-bros.png"
+    "../images/smash-bros.png",
+    "../images/metroid.png"
 ]
