@@ -13,17 +13,20 @@ const gameBoard = document.getElementById("game-board")
 const scoreDocument = document.getElementById("your-score")
 const allImages = document.getElementsByClassName("img")
 let clickedImages = []
+let imageId = []
 let score = 0
 let id = 0
 let clickCounter = 0
 let rowPosition = 1
 let columnPosition = 0
 
+
 // this hides all the images after 1 second of display
 
 const hideImages = () => {
     clickCounter = 0
     clickedImages = []
+    imageId = []
     for (let item of allImages) {
         item.style.opacity = "0"
     }
@@ -75,12 +78,10 @@ const drawImage = (gameBoard) => {
     imageBorder.style.gridColumnStart = columnPosition
 
     const imageElement = document.createElement("img")
-    imageElement.id = Math.floor(Math.random() * 10)
+    imageElement.id = Math.floor(Math.random() * 100)
     imageElement.classList.add("img")
     imageElement.style.opacity = "0"
     imageElement.src = getRandomImage(images)
-
-    const imageId = []
 
     // this is the function that displays the image after it is clicked
 
@@ -88,7 +89,8 @@ const drawImage = (gameBoard) => {
         clickCounter += 1
         imageElement.style.opacity = "1"
         clickedImages.push([imageElement.src, imageBorder.id])
-        imageId.push(imageElement.id)
+        imageId.push(imageBorder.id)
+        console.log(clickedImages, imageId)
 
         if (clickedImages[0][0] === clickedImages[1][0]) {
             if (imageId[0] !== imageId[1]) {
