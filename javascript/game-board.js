@@ -12,8 +12,6 @@ const getRandomImage = (items) => {
 const gameBoard = document.getElementById("game-board")
 const scoreDocument = document.getElementById("your-score")
 const allImages = document.getElementsByClassName("img")
-let matchingImage1 = null
-let matchingImage2 = null
 let clickedImages = []
 let score = 0
 let id = 0
@@ -34,8 +32,8 @@ const hideImages = () => {
 // this deletes the matching images
 
 const deleteImages = () => {
-    matchingImage1 = document.getElementById(clickedImages[0][1])
-    matchingImage2 = document.getElementById(clickedImages[1][1])
+    const matchingImage1 = document.getElementById(clickedImages[0][1])
+    const matchingImage2 = document.getElementById(clickedImages[1][1])
     matchingImage1.remove()
     matchingImage2.remove()
     score = score + 10
