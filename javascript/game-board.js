@@ -1,27 +1,4 @@
-const images = [
-    "https://cdn.afterdawn.fi/v3/news/original/github-logo.png",
-    "http://static.movingpackets.net/2013/12/github-logo-transparent.jpg",
-    "http://static.movingpackets.net/2013/12/github-logo-transparent.jpg",
-    "https://www.drupal.org/files/project-images/github_commits_logo.png",
-    "https://image.freepik.com/free-icon/github-logo-in-a-rounded-square_318-40761.jpg",
-    "http://www.pngall.com/wp-content/uploads/2016/04/Github-PNG-Image.png",
-    "https://cdn.afterdawn.fi/v3/news/original/github-logo.png",
-    "http://static.movingpackets.net/2013/12/github-logo-transparent.jpg",
-    "http://static.movingpackets.net/2013/12/github-logo-transparent.jpg",
-    "https://www.drupal.org/files/project-images/github_commits_logo.png",
-    "https://image.freepik.com/free-icon/github-logo-in-a-rounded-square_318-40761.jpg",
-    "http://www.pngall.com/wp-content/uploads/2016/04/Github-PNG-Image.png",
-    "https://cdn.afterdawn.fi/v3/news/original/github-logo.png",
-    "http://static.movingpackets.net/2013/12/github-logo-transparent.jpg",
-    "http://static.movingpackets.net/2013/12/github-logo-transparent.jpg",
-    "https://www.drupal.org/files/project-images/github_commits_logo.png",
-    "https://image.freepik.com/free-icon/github-logo-in-a-rounded-square_318-40761.jpg",
-    "http://www.pngall.com/wp-content/uploads/2016/04/Github-PNG-Image.png",
-    "https://www.drupal.org/files/project-images/github_commits_logo.png",
-    "https://image.freepik.com/free-icon/github-logo-in-a-rounded-square_318-40761.jpg",
-]
-
-
+import { images } from "./images.js"
 
 // this function randomly selects an image
 
@@ -40,7 +17,6 @@ let matchingImage2 = null
 let clickedImages = []
 let score = 0
 let id = 0
-let interval = null
 let clickCounter = 0
 let rowPosition = 1
 let columnPosition = 0
