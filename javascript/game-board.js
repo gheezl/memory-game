@@ -45,15 +45,6 @@ const deleteImages = () => {
     scoreDocument.innerHTML = score
 }
 
-// this reduces the score if you click on 2 different images
-
-const reduceScore = () => {
-    if (score >= 1) {
-        score -= 1
-    }
-    scoreDocument.innerHTML = score
-}
-
 // this displays the score on the header
 
 scoreDocument.innerHTML = score.toString()
@@ -90,7 +81,6 @@ const drawImage = (gameBoard) => {
         imageElement.style.opacity = "1"
         clickedImages.push([imageElement.src, imageBorder.id])
         imageId.push(imageBorder.id)
-        console.log(clickedImages, imageId)
 
         if (clickedImages[0][0] === clickedImages[1][0]) {
             if (imageId[0] !== imageId[1]) {

@@ -14,5 +14,6 @@ export const images = [
     "../images/tails.png",
     "../images/github.png",
     "../images/twitter.png",
-    "../images/instagram.png"
+    "../images/instagram.png",
+    "../images/snapchat.png"
 ]
