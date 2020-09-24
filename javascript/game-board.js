@@ -78,7 +78,7 @@ const drawImage = (gameBoard) => {
     imageBorder.style.gridColumnStart = columnPosition
 
     const imageElement = document.createElement("img")
-    imageElement.id = Math.floor(Math.random() * 100)
+    imageElement.id = Math.floor(Math.random() * 1000000)
     imageElement.classList.add("img")
     imageElement.style.opacity = "0"
     imageElement.src = getRandomImage(images)

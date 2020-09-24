@@ -12,5 +12,7 @@ export const images = [
     "../images/smash-bros.png",
     "../images/metroid.png",
     "../images/tails.png",
-    "../images/github.png"
+    "../images/github.png",
+    "../images/twitter.png",
+    "../images/instagram.png"
 ]
