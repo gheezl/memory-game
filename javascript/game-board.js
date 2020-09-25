@@ -6,6 +6,7 @@ shuffle(images)
 
 const gameBoard = document.getElementById("game-board")
 const scoreDocument = document.getElementById("your-score")
+const timeDocument = document.getElementById("game-time")
 const allImages = document.getElementsByClassName("img")
 let clickedImages = []
 let imageId = []
@@ -16,11 +17,16 @@ let rowPosition = 1
 let columnPosition = 0
 let increment = -1
 let time = 0
+let interval = null
 
 // game timer
 
+timeDocument.innerHTML = time.toString()
+
 const myTimer = () => {
     time += 1
+    timeDocument.innerHTML = time.toString()
+
     if (time === 60) {
         if (confirm("Time is up! Game over.")) {
             window.location = "/"
@@ -28,7 +34,7 @@ const myTimer = () => {
     } 
 }
 
-// this function randomly selects an image
+// this function selects an image
 
 const getRandomImage = (items, increment) => {
     const randomImage = items[increment]
@@ -56,7 +62,7 @@ const deleteImages = () => {
     hideImages()
     score = score + 10
     clickedImages = []
-    scoreDocument.innerHTML = score
+    scoreDocument.innerHTML = score.toString()
 }
 
 // this displays the score on the header
@@ -86,14 +92,16 @@ const drawImage = (gameBoard) => {
     const imageElement = document.createElement("img")
     imageElement.id = Math.floor(Math.random() * 1000000)
     imageElement.classList.add("img")
-    // imageElement.style.opacity = "0"
+    imageElement.style.opacity = "0"
     imageElement.src = getRandomImage(images, increment)
 
 
     // this is the function that displays the image after it is clicked
 
     const displayImage = () => {
-        setInterval(myTimer, 1000)
+        if (!interval) {
+            interval = setInterval(myTimer, 1000)
+        }
         clickCounter += 1
         imageElement.style.opacity = "1"
         clickedImages.push([imageElement.src, imageBorder.id])

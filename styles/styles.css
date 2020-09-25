@@ -56,3 +56,14 @@ body {
     margin: 5px;
     height: 150px;
 }
+
+.time {
+    display: flex;
+    justify-content: center;
+    grid-column-start: 3;
+    font-size: 30px;
+}
+
+.game-time {
+    margin-left: 10px;
+}
