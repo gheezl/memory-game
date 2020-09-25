@@ -1,11 +1,26 @@
 import { images } from "./images.js"
 
-// this function randomly selects an image
+const shuffle = (array) => {
+    let counter = array.length;
 
-const getRandomImage = (items) => {
-    const randomImage = items[Math.floor(Math.random() * items.length)]
-    return randomImage
+    // While there are elements in the array
+    while (counter > 0) {
+        // Pick a random index
+        let index = Math.floor(Math.random() * counter);
+
+        // Decrease counter by 1
+        counter--;
+
+        // And swap the last element with it
+        let temp = array[counter];
+        array[counter] = array[index];
+        array[index] = temp;
+    }
+
+    return array;
 }
+
+shuffle(images)
 
 // these are a few variables
 
@@ -19,7 +34,19 @@ let id = 0
 let clickCounter = 0
 let rowPosition = 1
 let columnPosition = 0
+let increment = -1
 
+// this function randomly selects an image
+
+// const getRandomImage = (items) => {
+//     const randomImage = items[Math.floor(Math.random() * items.length)]
+//     return randomImage
+// }
+
+const getRandomImage = (items, increment) => {
+    const randomImage = items[increment]
+    return randomImage
+}
 
 // this hides all the images after 1 second of display
 
@@ -39,7 +66,7 @@ const deleteImages = () => {
     const matchingImage2 = document.getElementById(clickedImages[1][1])
     matchingImage1.remove()
     matchingImage2.remove()
-    hideImages()
+    // hideImages()
     score = score + 10
     clickedImages = []
     scoreDocument.innerHTML = score
@@ -54,13 +81,14 @@ scoreDocument.innerHTML = score.toString()
 const drawImage = (gameBoard) => {
     columnPosition += 1
     id += 1
+    increment += 1
 
     if (columnPosition === 11) {
         rowPosition += 1
         columnPosition = 1
     }
 
-    // this creates a random image
+    // this creates a random image 
 
     const imageBorder = document.createElement("div")
     imageBorder.id = id
@@ -71,8 +99,8 @@ const drawImage = (gameBoard) => {
     const imageElement = document.createElement("img")
     imageElement.id = Math.floor(Math.random() * 1000000)
     imageElement.classList.add("img")
-    imageElement.style.opacity = "0"
-    imageElement.src = getRandomImage(images)
+    // imageElement.style.opacity = "0"
+    imageElement.src = getRandomImage(images, increment)
 
     // this is the function that displays the image after it is clicked
 
