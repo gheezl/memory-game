@@ -64,7 +64,7 @@ const deleteImages = () => {
     const matchingImage2 = document.getElementById(clickedImages[1][1])
     matchingImage1.remove()
     matchingImage2.remove()
-    // hideImages()
+    hideImages()
     score = score + 10
     clickedImages = []
     scoreDocument.innerHTML = score
@@ -97,7 +97,7 @@ const drawImage = (gameBoard) => {
     const imageElement = document.createElement("img")
     imageElement.id = Math.floor(Math.random() * 1000000)
     imageElement.classList.add("img")
-    // imageElement.style.opacity = "0"
+    imageElement.style.opacity = "0"
     imageElement.src = getRandomImage(images, increment)
 
     // this is the function that displays the image after it is clicked
