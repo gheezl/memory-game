@@ -1,22 +1,4 @@
-import { images } from "./images.js"
-
-// this reorganizes the images at random
-
-const shuffle = (array) => {
-    let counter = array.length;
-
-    while (counter > 0) {
-        let index = Math.floor(Math.random() * counter);
-
-        counter--;
-
-        let temp = array[counter];
-        array[counter] = array[index];
-        array[index] = temp;
-    }
-
-    return array;
-}
+import { images, shuffle } from "./images.js"
 
 shuffle(images)
 
@@ -33,13 +15,20 @@ let clickCounter = 0
 let rowPosition = 1
 let columnPosition = 0
 let increment = -1
+let time = 0
+
+// game timer
+
+const myTimer = () => {
+    time += 1
+    if (time === 60) {
+        if (confirm("Time is up! Game over.")) {
+            window.location = "/"
+        }
+    } 
+}
 
 // this function randomly selects an image
-
-// const getRandomImage = (items) => {
-//     const randomImage = items[Math.floor(Math.random() * items.length)]
-//     return randomImage
-// }
 
 const getRandomImage = (items, increment) => {
     const randomImage = items[increment]
@@ -97,12 +86,14 @@ const drawImage = (gameBoard) => {
     const imageElement = document.createElement("img")
     imageElement.id = Math.floor(Math.random() * 1000000)
     imageElement.classList.add("img")
-    imageElement.style.opacity = "0"
+    // imageElement.style.opacity = "0"
     imageElement.src = getRandomImage(images, increment)
+
 
     // this is the function that displays the image after it is clicked
 
     const displayImage = () => {
+        setInterval(myTimer, 1000)
         clickCounter += 1
         imageElement.style.opacity = "1"
         clickedImages.push([imageElement.src, imageBorder.id])
