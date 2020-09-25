@@ -2,6 +2,9 @@ import { images, shuffle } from "./images.js"
 
 shuffle(images)
 
+alert("The rules of this memory game are very simple, all you have to do is connect as many sets of 2 matching images as possible before the timer hits 60 seconds.")
+alert("Good luck!!")
+
 // these are a few variables
 
 const gameBoard = document.getElementById("game-board")
@@ -28,7 +31,7 @@ const myTimer = () => {
     timeDocument.innerHTML = time.toString()
 
     if (time === 60) {
-        if (confirm("Time is up! Game over.")) {
+        if (confirm(`Time is up! Game over. Your final score is ${score}`)) {
             window.location = "/"
         }
     } 
@@ -102,6 +105,7 @@ const drawImage = (gameBoard) => {
         if (!interval) {
             interval = setInterval(myTimer, 1000)
         }
+
         clickCounter += 1
         imageElement.style.opacity = "1"
         clickedImages.push([imageElement.src, imageBorder.id])
