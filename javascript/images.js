@@ -1,8 +1,8 @@
 export const images = [
-    "https://logos-download.com/wp-content/uploads/2018/01/Transformers_Autobot_logo_red.png",
-    "https://logos-download.com/wp-content/uploads/2018/01/Transformers_Autobot_logo_red.png",
-    "autobot.png",
-    "decepticon.png",
+    // "https://logos-download.com/wp-content/uploads/2018/01/Transformers_Autobot_logo_red.png",
+    // "https://logos-download.com/wp-content/uploads/2018/01/Transformers_Autobot_logo_red.png",
+    "./autobot.png",
+    "./decepticon.png",
     // "../images/triforce.png",
     // "../images/sonic.png",
     // "../images/mario.png",
