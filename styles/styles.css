@@ -43,7 +43,6 @@ body {
     display: flex;
     justify-content: center;
     width: 100px;
-    /* height: auto; */
 }
 
 .img-border {
@@ -66,4 +65,21 @@ body {
 
 .game-time {
     margin-left: 10px;
+}
+
+
+@media only screen and (max-width: 800px) {
+    .game-board {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        margin-top: 10px;
+        padding: 5px;
+    }
+
+    .img {
+        display: flex;
+        justify-content: center;
+        width: 50px;
+}
 }
