@@ -15,10 +15,10 @@ export const images = [
     "http://icons.iconarchive.com/icons/ph03nyx/super-mario/256/Hat-Wario-icon.png",
     "http://icons.iconarchive.com/icons/ph03nyx/super-mario/128/Hat-Waluigi-icon.png",
     "http://icons.iconarchive.com/icons/ph03nyx/super-mario/128/Hat-Waluigi-icon.png",
+    "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f2af7648-2754-42e7-b98f-0fd9fa6ab5fd/d6knuxn-0e8d7eb8-6cd3-43aa-aa0f-c1ff0d961165.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTpmaWxlLmRvd25sb2FkIl0sIm9iaiI6W1t7InBhdGgiOiIvZi9mMmFmNzY0OC0yNzU0LTQyZTctYjk4Zi0wZmQ5ZmE2YWI1ZmQvZDZrbnV4bi0wZThkN2ViOC02Y2QzLTQzYWEtYWEwZi1jMWZmMGQ5NjExNjUucG5nIn1dXX0.laiorD-7dzT_4yF-57havStAcZx8NXjZos4uEJv85qg",
+    "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f2af7648-2754-42e7-b98f-0fd9fa6ab5fd/d6knuxn-0e8d7eb8-6cd3-43aa-aa0f-c1ff0d961165.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTpmaWxlLmRvd25sb2FkIl0sIm9iaiI6W1t7InBhdGgiOiIvZi9mMmFmNzY0OC0yNzU0LTQyZTctYjk4Zi0wZmQ5ZmE2YWI1ZmQvZDZrbnV4bi0wZThkN2ViOC02Y2QzLTQzYWEtYWEwZi1jMWZmMGQ5NjExNjUucG5nIn1dXX0.laiorD-7dzT_4yF-57havStAcZx8NXjZos4uEJv85qg",
 
 
-    // "../images/waluigi.png",
-    // "../images/mega-man.png",
     // "../images/playstation.png",
     // "../images/Xbox.png",
     // "../images/nintendo.png",
